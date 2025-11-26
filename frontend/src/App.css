@@ -206,8 +206,8 @@ h2 {
 }
 
 .icon-circle {
-    width: 80px;
-    height: 80px;
+    width: 145px;
+    height: 135px;
     background: #ccfbf1;
     border-radius: 50%;
     display: flex;
@@ -243,8 +243,8 @@ h2 {
 }
 
 .feature-icon {
-    width: 70px;
-    height: 70px;
+    width: 215px;
+    height: 195px;
     background: #ccfbf1;
     border-radius: 50%;
     display: flex;
