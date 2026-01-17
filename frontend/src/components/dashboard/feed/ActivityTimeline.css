@@ -1,0 +1,71 @@
+/* src/components/feed/ActivityTimeline.css */
+.activity-timeline {
+  background: white;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-6);
+}
+
+.activity-timeline h3 {
+  margin-bottom: var(--spacing-6);
+  font-size: var(--font-xl);
+}
+
+.activity-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.activity-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-4);
+  padding: var(--spacing-3) var(--spacing-4);
+  border-bottom: 1px solid var(--color-surface);
+  background-color: #8080800f;
+    border-radius: 0.5rem;
+}
+
+.activity-item:last-child {
+  border-bottom: none;
+}
+
+.activity-icon {
+  font-size: 2rem;
+  width: 165px;
+  text-align: center;
+}
+
+.activity-content {
+  flex: 1;
+}
+
+.activity-text {
+  margin: 0;
+  font-weight: 500;
+}
+
+.activity-time {
+  font-size: var(--font-sm);
+  color: var(--color-text-light);
+}
+
+.activity-points {
+  font-weight: 700;
+  color: var(--color-primary);
+  background: var(--color-primary-light);
+  padding: var(--spacing-1) var(--spacing-3);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-sm);
+}
+
+.empty-state {
+  text-align: center;
+  color: var(--color-text-light);
+  font-style: italic;
+  padding: var(--spacing-8) 0;
+}

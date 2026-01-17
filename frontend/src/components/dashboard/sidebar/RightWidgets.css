@@ -1,0 +1,77 @@
+/* src/components/sidebar/RightWidgets.css */
+.widget {
+  background: white;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-6);
+  margin-bottom: var(--spacing-6);
+}
+
+.widget h3 {
+  margin-bottom: var(--spacing-4);
+  font-size: var(--font-lg);
+  color: var(--color-text);
+}
+
+.challenge-widget h4 {
+  margin: var(--spacing-3) 0;
+  font-size: var(--font-lg);
+}
+
+.progress-bar {
+  height: 12px;
+  background: var(--color-surface);
+  border-radius: 6px;
+  overflow: hidden;
+  margin: var(--spacing-4) 0;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--color-primary);
+  border-radius: 6px;
+  transition: width 0.6s ease;
+}
+
+.progress-text {
+  font-size: var(--font-sm);
+  color: var(--color-text-light);
+  margin-bottom: var(--spacing-4);
+}
+
+.full-width {
+  width: 100%;
+}
+
+.leaderboard-list {
+  padding: 0;
+  margin: var(--spacing-4) 0 0;
+}
+
+.leaderboard-list li {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  padding: var(--spacing-3) 0;
+  border-bottom: 1px solid var(--color-surface);
+}
+
+.leaderboard-list li:last-child { border: none; }
+
+
+.rank { font-weight: 700; width: 24px; }
+.leader-avatar {
+  width: 36px; height: 36px; border-radius: 50%; background: var(--color-primary); color: white;
+  display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: var(--font-sm);
+}
+.leader-name { flex: 1; }
+.leader-points { font-weight: 600; color: var(--color-primary-dark); }
+
+.community-links a {
+  display: block;
+  padding: var(--spacing-2) 0;
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+.community-links a:hover { text-decoration: underline; }

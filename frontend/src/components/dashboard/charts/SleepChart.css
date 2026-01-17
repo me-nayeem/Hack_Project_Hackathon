@@ -1,0 +1,27 @@
+/* SleepChart.css */
+.chart-card {
+  background: white;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-6);
+}
+
+.chart-card h3 {
+  margin-bottom: var(--spacing-4);
+}
+
+.legend {
+  display: flex;
+  gap: var(--spacing-6);
+  margin-top: var(--spacing-4);
+  justify-content: center;
+  font-size: var(--font-sm);
+}
+
+.legend i {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-right: var(--spacing-1);
+  border-radius: 2px;
+}

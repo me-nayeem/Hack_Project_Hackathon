@@ -1,0 +1,245 @@
+/* src/pages/ChallengePage.css */
+.challenge-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: var(--spacing-6);
+  font-family: system-ui, sans-serif;
+}
+
+.challenge-hero {
+  margin-bottom: var(--spacing-12);
+}
+
+.challenge-card {
+  background: white;
+  border-radius: 24px;
+  padding: var(--spacing-12) var(--spacing-8);
+  box-shadow: 0 10px 40px rgba(20, 184, 166, 0.15);
+  border: 1px solid rgba(20, 184, 166, 0.2);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.challenge-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 6px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-primary-light));
+}
+
+.challenge-header h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: var(--color-text);
+  margin: 0 0 var(--spacing-4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-4);
+}
+
+.challenge-emoji {
+  font-size: 3.5rem;
+}
+
+.challenge-desc {
+  font-size: var(--font-lg);
+  color: var(--color-text-light);
+  max-width: 600px;
+  margin: 0 auto var(--spacing-8);
+  line-height: 1.6;
+}
+
+/* Large Progress Bar */
+.challenge-progress {
+  margin: var(--spacing-8) 0;
+}
+
+.progress-large {
+  height: 60px;
+  background: #f1f5f9;
+  border-radius: 30px;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: var(--spacing-4);
+  box-shadow: inset 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.progress-fill-large {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-primary-light));
+  border-radius: 30px;
+  position: relative;
+  transition: width 1.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.progress-fill-large::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  animation: shimmer 4s infinite;
+}
+
+.progress-text-large {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--color-text);
+  white-space: nowrap;
+}
+
+.current-steps {
+  color: var(--color-primary-dark);
+}
+
+.progress-meta {
+  font-size: var(--font-lg);
+  color: var(--color-text-light);
+  font-weight: 600;
+}
+
+/* Join Button */
+.btn-join-huge {
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 50px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(20, 184, 166, 0.4);
+  transition: all 0.3s;
+  margin: var(--spacing-6) 0;
+}
+
+.btn-join-huge:hover {
+  background: var(--color-primary-dark);
+  transform: translateY(-4px);
+  box-shadow: 0 15px 40px rgba(20, 184, 166, 0.5);
+}
+
+.joined-state {
+  padding: var(--spacing-8);
+  background: rgba(20, 184, 166, 0.1);
+  border-radius: 20px;
+  margin: var(--spacing-6) 0;
+}
+
+.check-icon {
+  font-size: 4rem;
+  color: var(--color-primary);
+  display: block;
+  margin-bottom: var(--spacing-3);
+}
+
+.joined-state strong {
+  font-size: 1.5rem;
+  color: var(--color-primary-dark);
+}
+
+/* Stats */
+.challenge-stats {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-12);
+  margin-top: var(--spacing-8);
+  padding-top: var(--spacing-6);
+  border-top: 1px solid var(--color-border);
+}
+
+.stat strong {
+  display: block;
+  font-size: 1.5rem;
+  color: var(--color-primary-dark);
+}
+
+.stat span {
+  color: var(--color-text-light);
+  font-size: var(--font-sm);
+}
+
+/* Leaderboard Preview */
+.leaderboard-preview {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-8);
+  border: 1px solid var(--color-border);
+  text-align: center;
+}
+
+.leaderboard-preview h2 {
+  color: var(--color-primary-dark);
+  margin-bottom: var(--spacing-6);
+}
+
+.leaderboard-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+  margin-bottom: var(--spacing-6);
+}
+
+.leader-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-4);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+}
+
+.leader-item.you {
+  background: rgba(20, 184, 166, 0.15);
+  border: 2px solid var(--color-primary);
+}
+
+.rank {
+  font-size: 1.5rem;
+  font-weight: 800;
+  width: 50px;
+}
+
+.avatar-sm {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.name {
+  flex: 1;
+  text-align: left;
+  padding-left: var(--spacing-4);
+  font-weight: 600;
+}
+
+.steps {
+  font-weight: 700;
+  color: var(--color-primary-dark);
+}
+
+.btn-view-all {
+  background: transparent;
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary);
+  padding: var(--spacing-3) var(--spacing-8);
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
