@@ -28,7 +28,6 @@ router.get("/data/get", authenticate, async (req, res) => {
 
 // GET /api/health/form-data
 router.get("/form", authenticate, async (req, res) => {
-  console.log("Inside form data route - userId:", req.userId);
 
   try {
     if (!req.userId) {

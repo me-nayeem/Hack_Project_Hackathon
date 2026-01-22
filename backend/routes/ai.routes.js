@@ -5,7 +5,7 @@ const Groq = require("groq-sdk");
 const authenticate = require("../middleware/authenticate");
 
 const groq = new Groq({
-  apiKey: process.env.GROQ_API_KEY, 
+  apiKey: process.env.GROQ_API_KEY,
 });
 
 router.post("/post/message", async (req, res) => {
@@ -17,12 +17,12 @@ router.post("/post/message", async (req, res) => {
         {
           role: "system",
           content: `You are a health assistant. User health data: ${JSON.stringify(
-            healthData
+            healthData,
           )}`,
         },
         ...messages,
       ],
-      model: "llama-3.3-70b-versatile", 
+      model: "llama-3.3-70b-versatile",
       temperature: 0.7,
       max_tokens: 1024,
     });
@@ -36,14 +36,13 @@ router.post("/post/message", async (req, res) => {
   }
 });
 
-
 router.post("/post/insight", authenticate, async (req, res) => {
   try {
     const { messages, healthData } = req.body;
 
     const systemPrompt = `
 You are a personal health assistant. Here is the user's health data: ${JSON.stringify(
-      healthData
+      healthData,
     )}.
 
 Analyze this data and provide three categories of health insights:
@@ -62,13 +61,12 @@ Analyze this data and provide three categories of health insights:
     const raw = completion.choices[0].message.content;
     res.json({
       success: true,
-      raw, 
+      raw,
     });
   } catch (error) {
     console.error("Error in /post/insight:", error);
     res.status(500).json({ error: error.message });
   }
 });
-
 
 module.exports = router;

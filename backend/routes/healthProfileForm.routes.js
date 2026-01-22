@@ -12,7 +12,6 @@ const router = express.Router();
 
 router.post("/", authenticate, async (req, res) => {
   try {
-    console.log("from frontend: ", req.body, " and user: ", req.user);
     const profile = await HealthProfileForm.findOneAndUpdate(
       { userId: req.userId },
       { ...req.body, userId: req.userId },

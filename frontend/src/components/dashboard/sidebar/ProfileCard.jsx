@@ -36,7 +36,6 @@ const ProfileCard = ({ user }) => {
         <button
               className="btn-primary"
               onClick={() => {setIsModalOpen(true)
-                console.log("clonked");
               }}
             >
               Connect Device

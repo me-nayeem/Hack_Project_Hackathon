@@ -92,8 +92,7 @@ router.post(
 
     try {
       // 1. Find user
-      const user = await User.findOne({ email }).select("+password"); // include password field
-      console.log(user);
+      const user = await User.findOne({ email }).select("+password"); // include password 
       if (!user) {
         return res.status(401).json({
           success: false,

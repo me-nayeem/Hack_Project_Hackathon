@@ -4,9 +4,7 @@ const User = require("../model/userSchema");
 
 const authenticate = async (req, res, next) => {
   try {
-    console.log("inside authentication for form:");
     const token = req.headers.authorization?.replace("Bearer ", "");
-    console.log("incoming token:", token);
 
     if (!token) {
       return res.status(401).json({ error: "Authentication required" });

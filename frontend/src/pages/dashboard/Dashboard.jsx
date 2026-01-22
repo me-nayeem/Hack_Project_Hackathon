@@ -1,7 +1,7 @@
 // Dashboard.jsx
 import "./Dashboard.css";
 import Navbar from "../../components/dashboard/Navbar/Navbar";
-import {cleanAIMessage} from "../..//utils/parseAIInsights";
+import { cleanAIMessage } from "../..//utils/parseAIInsights";
 import HealthInsightsCard from "../../components/dashboard/healthInsight/HealthInsightsCard";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
@@ -32,7 +32,6 @@ export default function Dashboard() {
     const loadUser = async () => {
       try {
         const data = await getUserDataName(); // calls your backend
-        console.log("user data from API:", data);
         const name = data.name || data.user?.firstName || "";
 
         setUserName(name);
@@ -54,9 +53,8 @@ export default function Dashboard() {
       const insights = await getHealthInsights(healthData);
 
       // 3️⃣ Set insights to state
-      console.log("ai analises health before clean: ", insights);
+
       const cleanInsight = cleanAIMessage(insights);
-      console.log("ai analises health after clean: ", cleanInsight);
       setHealthInsights(cleanInsight);
       setShowInsights(true);
     } catch (err) {
@@ -66,8 +64,6 @@ export default function Dashboard() {
       setLoadingInsights(false);
     }
   };
-
-  console.log(healthInsights);
 
   const user = {
     name: "Arif Hossain",
@@ -226,11 +222,12 @@ export default function Dashboard() {
             <div className="health-insights-wrapper">
               {showInsights ? (
                 <HealthInsightsCard
-  healthInsights={healthInsights}
-  loadingInsights={loadingInsights}
-  fetchHealthInsights={fetchHealthInsights}
-  setShowInsights={setShowInsights}
-></HealthInsightsCard> ): (
+                  healthInsights={healthInsights}
+                  loadingInsights={loadingInsights}
+                  fetchHealthInsights={fetchHealthInsights}
+                  setShowInsights={setShowInsights}
+                ></HealthInsightsCard>
+              ) : (
                 /* Compact button-only version when collapsed */
                 <div className="health-insights-teaser">
                   <div className="teaser-content">
@@ -347,10 +344,10 @@ export default function Dashboard() {
                                 status.color.includes("excellent")
                                   ? "excellent"
                                   : status.color.includes("good")
-                                  ? "good"
-                                  : status.color.includes("fair")
-                                  ? "fair"
-                                  : "bad"
+                                    ? "good"
+                                    : status.color.includes("fair")
+                                      ? "fair"
+                                      : "bad"
                               }`}
                               style={{ width: `${(m.value / m.goal) * 100}%` }}
                             ></div>

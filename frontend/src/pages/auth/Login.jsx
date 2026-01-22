@@ -65,7 +65,6 @@ const Login = () => {
       };
 
       const response = await FetchLogInDataPost(payload);
-      console.log("Login response:", response);
 
       if (response ?.success ) {
         // Redirect to dashboard

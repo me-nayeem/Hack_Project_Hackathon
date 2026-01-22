@@ -6,7 +6,6 @@ const BASE_URL = "http://localhost:3001";
 
 
 export const FetchDashboardData = async () => {
-  console.log("Fetching dashboard data from backend");
   try {
     const token = localStorage.getItem('authToken');
     
@@ -34,7 +33,7 @@ export const FetchDashboardData = async () => {
     }
     
     const data = await response.json();
-    console.log("Fetched dashboard data:", data);
+
     return data;
   } catch (error) {
     console.error("Error fetching dashboard data:", error);
@@ -45,7 +44,6 @@ export const FetchDashboardData = async () => {
 
 
 export const getUserDataName = async () => {
-  console.log("Fetching user name data from backend");
   try {
     const token = localStorage.getItem('authToken');
     
@@ -73,7 +71,6 @@ export const getUserDataName = async () => {
     }
     
     const data = await response.json();
-    console.log("Fetched user name data:", data);
     return data;
   } catch (error) {
     console.error("Error fetching user data:", error);
@@ -101,7 +98,6 @@ export const getUserData = async () => {
     }
 
     const data = await res.json();
-    console.log("form data of user from database: ", data);
     return data;
   } catch (error) {
     console.error("Error fetching user data:", error);
@@ -116,7 +112,7 @@ export const getHealthInsights = async (healthData) => {
       { role: "user", content: "Please analyze my health data and provide  three health insights. 1. What’s Looking Good.  2. Areas to Improve   3. Today’s Top Recommendations" },
     ];
     const response = await PostMessageToAIForInsight(messages, healthData);
-    console.log("check response: ", response.success);
+  
     return response.raw; 
   } catch (error) {
     console.error("Error fetching AI insights:", error);

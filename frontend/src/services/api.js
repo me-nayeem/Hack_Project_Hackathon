@@ -1,7 +1,6 @@
 const BASE_URL = "http://localhost:3001";
 
 export const PostMessageToAIBackend = async (messages, healthData) => {
-  console.log("Posting messages to AI backend:", messages);
   try {
     const response = await fetch(`${BASE_URL}/api/ai-chat/post/message`, {
       method: "POST",
@@ -18,7 +17,6 @@ export const PostMessageToAIBackend = async (messages, healthData) => {
     }
 
     const data = await response.json(); 
-    console.log("Received response from AI backend:", data);
     return data;
   } catch (error) {
     console.error("Error posting message to AI backend:", error);
@@ -27,7 +25,6 @@ export const PostMessageToAIBackend = async (messages, healthData) => {
 };
 
 export const PostMessageToAIForInsight = async (messages, healthData) => {
-  console.log("Posting messages to AI backend:", messages);
 
   try {
     const token = localStorage.getItem("authToken");
@@ -49,7 +46,6 @@ export const PostMessageToAIForInsight = async (messages, healthData) => {
     }
 
     const data = await response.json();
-    console.log("Received response from AI backend:", data);
     return data;
   } catch (error) {
     console.error("Error posting message to AI backend:", error);

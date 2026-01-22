@@ -2,7 +2,6 @@ const BASE_URL = "http://localhost:3001";
 
 
 export const FetchLogInDataPost = async (loginData) => {
-  console.log("Posting login data to backend:", loginData);
   try {
     const response = await fetch(`${BASE_URL}/api/user/login/data/post`, {
       method: "POST",
@@ -19,7 +18,6 @@ export const FetchLogInDataPost = async (loginData) => {
     const data = await response.json();
     if (data.token) {
       localStorage.setItem("authToken", data.token);
-      console.log("Token saved to localStorage");
     }
     return data;
   } catch (error) {
@@ -29,7 +27,6 @@ export const FetchLogInDataPost = async (loginData) => {
 };
 
 export const FetchSignUpDataPost = async (signUpData) => {
-  console.log("Posting sign-up data to backend:", signUpData);
   try {
     const response = await fetch(`${BASE_URL}/api/user/sign-up/data/post`, {
       method: "POST",
@@ -44,10 +41,8 @@ export const FetchSignUpDataPost = async (signUpData) => {
       throw new Error(errorData.error || "Failed to sign up");
     }
     const data = await response.json();
-    console.log("Received sign-up response from backend:", data);
     if (data.token) {
       localStorage.setItem("authToken", data.token);
-      console.log("Token saved to localStorage");
     }
     return data;
   } catch (error) {
@@ -81,7 +76,6 @@ export const logout = async () => {
 export const isLoggedIn = async () => {
   try {
     const token = localStorage.getItem("authToken");
-    console.log("token for validation:", token);
 
     if (!token) return false;
 

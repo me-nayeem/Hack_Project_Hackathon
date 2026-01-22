@@ -16,7 +16,6 @@ const Navbar = () => {
           const data = await response.json();
           setIsLogin(data); 
         } catch (err) {
-          console.log("User not authenticated → redirecting to home");
           setIsLogin('false');
         }
       };

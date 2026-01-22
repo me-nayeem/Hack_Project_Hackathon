@@ -11,7 +11,6 @@ const router = express.Router();
 
 router.get('/verify', authenticate, async (req, res) => {
   try {
-    console.log("User verified:", req.user._id);
 
     res.json({
       ok: true,

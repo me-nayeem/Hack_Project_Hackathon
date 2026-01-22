@@ -8,8 +8,6 @@ const openai = new OpenAI({
 
 const UserPostMessage = async (req, res) => {
   const { message, context } = req.body;
-  console.log("Received message:", message);
-  console.log("With context:", context);
 
   try {
     const completion = await openai.chat.completions.create({
@@ -21,7 +19,6 @@ const UserPostMessage = async (req, res) => {
     });
 
     const reply = completion.choices[0].message.content;
-    console.log("AI reply in backend:", reply);
     res.json({ reply });
   } catch (err) {
     console.error(err);
